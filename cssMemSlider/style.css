@@ -125,3 +125,20 @@ img {
 	background: #78492c;
 }
 
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+	transform: translateX(0);
+    width: 100%;
+}
+
+#slide1:checked ~ .texts > .text1,
+#slide2:checked ~ .texts > .text2,
+#slide3:checked ~ .texts > .text3,
+#slide4:checked ~ .texts > .text4,
+#slide5:checked ~ .texts > .text5 {
+    transform: translateX(0);
+    width: 100%;
+}
