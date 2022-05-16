@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(./assets/wallpaper.jpg);
+	background-repeat: no-repeat;
+}
+
+.wrapper {
+    background-color: #ddd;
+	margin: 3rem auto;
+    padding: 0.8rem;
+    display: grid;
+	width: 60%;
+	max-height: 80vh;
+    grid-template-rows: 1fr 15%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    "slider slider"
+    "text controls";
+    gap: 2rem;
+	-webkit-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+	-moz-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+	-o-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+	box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+}
+
+.slider {
+    grid-area: slider;
+	background-color: #ddd;
+	-webkit-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	-o-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+}
+
+.slides {
+	width: 0%;
+    transform: translateX(-100%);
+    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper > input {
+	display: none;
+}
+
+img {
+	width: 100%;
+	object-fit: contain;
+}
+
+
+.wrapper .controls {
+    grid-area: controls;
+    justify-self: end;
+}
+
+.wrapper .texts {
+    grid-area: text;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    width: 0%;
+    transform: translateX(-100%);
+    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    overflow: hidden;
+}
+
+.text-wrapper p {
+    width: 100%;
+}
+
+
