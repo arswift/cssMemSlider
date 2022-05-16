@@ -97,7 +97,7 @@ img {
 	display: inline-block;
 	height: 2.5rem;
 	width: 2.5rem;
-	background-color: #e66819;
+	background-color: rgb(230, 104, 25, 0.4) ;
     border: 0.5rem solid #ddd;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
