@@ -20,8 +20,8 @@ body {
     display: grid;
 	width: 60%;
 	max-height: 80vh;
-    grid-template-rows: 1fr 15%;
-    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 2fr auto;
     grid-template-areas:
     "slider slider"
     "text controls";
@@ -148,6 +148,7 @@ p {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 1.5rem;
 }
+
 
 @media (max-width: 768px) {
 	.wrapper {
