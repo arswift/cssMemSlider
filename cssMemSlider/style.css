@@ -18,7 +18,7 @@ body {
 	margin: 3rem auto;
     padding: 0.8rem;
     display: grid;
-	width: 60%;
+	max-width: 60%;
     grid-template-rows: minmax(auto, 80vh) auto;
     grid-template-columns: 2fr auto;
     grid-template-areas:
@@ -171,8 +171,16 @@ p {
 
 
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
 	.wrapper {
 		width: 85%;
+	}
+	.wrapper label {
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 0.2rem solid #ddd;
+	}
+	p {
+		font-size: 1rem;
 	}
 }
