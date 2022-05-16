@@ -10,6 +10,7 @@
 body {
 	background-image: url(./assets/wallpaper.jpg);
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .wrapper {
