@@ -69,6 +69,7 @@ img {
 
 .wrapper .controls {
     grid-area: controls;
+	background-color: #ddd;
     justify-self: end;
 }
 
@@ -80,12 +81,7 @@ img {
 }
 
 .text {
-    display: none;
-    transform: translateX(-100%);
-    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
-	-moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
-	-o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
-	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	display: none;
     overflow: hidden;
 }
 
@@ -115,9 +111,12 @@ img {
 }
 
 .wrapper label:active {
-	background: #27170e;;
+	background: #eaad05;
 }
 
+.wrapper label:active:hover {
+	background: #7b18187d;
+}
 
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
@@ -142,9 +141,17 @@ img {
 #slide4:checked ~ .texts > .text4,
 #slide5:checked ~ .texts > .text5 {
 	display: block;
-    transform: translateX(0);
+	animation-name: textappear;
+	animation-duration: 2s;
+	color: #27170e;
     width: 100%;
 }
+
+@keyframes textappear {
+	from {color: #ddd;}
+	to {color: #27170e;}
+}
+
 
 p {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
