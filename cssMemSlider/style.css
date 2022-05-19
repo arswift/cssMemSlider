@@ -130,6 +130,14 @@ img {
 	background: #6e0505;
 }
 
+#slide1:checked ~ .controls label:nth-of-type(1):active,
+#slide2:checked ~ .controls label:nth-of-type(2):active,
+#slide3:checked ~ .controls label:nth-of-type(3):active,
+#slide4:checked ~ .controls label:nth-of-type(4):active,
+#slide5:checked ~ .controls label:nth-of-type(5):active {
+	background: #faf090;
+}
+
 
 #slide1:checked ~ .slider > .slide1,
 #slide2:checked ~ .slider > .slide2,
