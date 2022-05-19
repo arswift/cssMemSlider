@@ -114,10 +114,6 @@ img {
 	background: #eaad05;
 }
 
-.wrapper label:active:hover {
-	background: #7b18187d;
-}
-
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
 #slide3:checked ~ .controls label:nth-of-type(3),
@@ -125,6 +121,15 @@ img {
 #slide5:checked ~ .controls label:nth-of-type(5) {
 	background: #78492c;
 }
+
+#slide1:checked ~ .controls label:nth-of-type(1):hover,
+#slide2:checked ~ .controls label:nth-of-type(2):hover,
+#slide3:checked ~ .controls label:nth-of-type(3):hover,
+#slide4:checked ~ .controls label:nth-of-type(4):hover,
+#slide5:checked ~ .controls label:nth-of-type(5):hover {
+	background: #6e0505;
+}
+
 
 #slide1:checked ~ .slider > .slide1,
 #slide2:checked ~ .slider > .slide2,
