@@ -1,0 +1,208 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(./assets/wallpaper.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.wrapper {
+    background-color: #ddd;
+	margin: 3rem auto;
+    padding: 0.8rem;
+    display: grid;
+	max-width: 60%;
+    grid-template-rows: minmax(auto, 80vh) auto;
+    grid-template-columns: 2fr auto;
+    grid-template-areas:
+    "slider slider"
+    "text controls";
+    gap: 2rem;
+	border-radius: 1.5%;
+	-webkit-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+	-moz-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+	-o-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+	box-shadow: 0 0 1.25rem rgba(0, 0, 0, .7);
+}
+
+.slider {
+    grid-area: slider;
+	background-color: #ddd;
+	border-radius: 1.5%;
+	-webkit-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	-o-box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	box-shadow: 0 0 1.25rem rgba(0, 0, 0, .5);
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+}
+
+.slides {
+	width: 0%;
+    transform: translateX(-100%);
+    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-moz-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	-o-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper > input {
+	display: none;
+}
+
+img {
+	width: 100%;
+	object-fit: contain;
+}
+
+
+.wrapper .controls {
+    grid-area: controls;
+	background-color: #ddd;
+    justify-self: end;
+}
+
+.wrapper .texts {
+    grid-area: text;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+	display: none;
+    overflow: hidden;
+}
+
+.text-wrapper p {
+    width: 100%;
+}
+
+.wrapper label {
+	cursor: pointer;
+	display: inline-block;
+	height: 2.5rem;
+	width: 2.5rem;
+	background-color: rgb(230, 104, 25, 0.4) ;
+    border: 0.5rem solid #ddd;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transition: background ease-in-out .5s;
+	-moz-transition: background ease-in-out .5s;
+	-o-transition: background ease-in-out .5s;
+	transition: background ease-in-out .5s;
+}
+
+.wrapper label:hover {
+	background: #925631;
+}
+
+.wrapper label:active {
+	background: #eaad05;
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4),
+#slide5:checked ~ .controls label:nth-of-type(5) {
+	background: #78492c;
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1):hover,
+#slide2:checked ~ .controls label:nth-of-type(2):hover,
+#slide3:checked ~ .controls label:nth-of-type(3):hover,
+#slide4:checked ~ .controls label:nth-of-type(4):hover,
+#slide5:checked ~ .controls label:nth-of-type(5):hover {
+	background: #6e0505;
+}
+
+#slide1:checked ~ .controls label:nth-of-type(1):active,
+#slide2:checked ~ .controls label:nth-of-type(2):active,
+#slide3:checked ~ .controls label:nth-of-type(3):active,
+#slide4:checked ~ .controls label:nth-of-type(4):active,
+#slide5:checked ~ .controls label:nth-of-type(5):active {
+	background: #faf090;
+}
+
+
+#slide1:checked ~ .slider > .slide1,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4,
+#slide5:checked ~ .slider > .slide5 {
+	transform: translateX(0);
+    width: 100%;
+}
+
+#slide1:checked ~ .texts > .text1,
+#slide2:checked ~ .texts > .text2,
+#slide3:checked ~ .texts > .text3,
+#slide4:checked ~ .texts > .text4,
+#slide5:checked ~ .texts > .text5 {
+	display: block;
+	animation-name: textappear;
+	animation-duration: 2s;
+	color: #27170e;
+    width: 100%;
+}
+
+@keyframes textappear {
+	from {color: #ddd;}
+	to {color: #27170e;}
+}
+
+
+p {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+	.wrapper {
+		width: 80%;
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"slider"
+		"controls"
+		"text";
+	}
+	
+	.wrapper .controls {
+		justify-self: center;
+	}
+   p {
+	   margin-bottom: 2rem;
+   }
+}
+
+
+
+@media (max-width: 400px) {
+	.wrapper {
+		width: 85%;
+	}
+	.wrapper label {
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 0.2rem solid #ddd;
+	}
+	p {
+		font-size: 1rem;
+	}
+}
